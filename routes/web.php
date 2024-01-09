@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::prefix('manager')
+->middleware('can:manager-higher')
+->group(function(){
+    Route::get('index', function () {
+            dd('manager');
+    });
+});
+
+route::middleware('can:user-higher')
+->group(function(){
+    Route::get('index', function () {
+            dd('user');
+    });
+});    
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
