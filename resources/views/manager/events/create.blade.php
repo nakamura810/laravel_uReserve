@@ -17,7 +17,7 @@
     </div>
 @endif
 
-<form method="POST" action="{{ ('events.store') }}">
+<form method="POST" action="{{ route('events.store') }}">
     @csrf
 
     <div>
