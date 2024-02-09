@@ -24,13 +24,13 @@ class StoreEventRequest extends FormRequest
     public function rules()
     {
         return [
-            'event_name' => ['required','max50'],
-            'information' => ['required','max200'],
-            'event_date' => ['required','date'],
+            'event_name' => ['required', 'max:50'],
+            'information' => ['required', 'max:200'],
+            'event_date' => ['required', 'date'],
             'start_time' => ['required'],
-            'end_time' => ['required','after:start_time'],
-            'max_pepole' => ['required','numeric','between:1,20'],
-            'is_visible' => ['required','boolean']
+            'end_time' => ['required', 'after:start_time'],
+            'max_people' => ['required', 'numeric', 'between:1,20'],
+            'is_visible' => ['required', 'boolean']
         ];
     }
 }

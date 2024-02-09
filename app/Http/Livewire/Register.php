@@ -31,6 +31,7 @@ class Register extends Component
             'name' => $this->name,
             'email' => $this->email,
             'password' => Hash::make($this->password),
+            'role' => '1' //デフォルトで実行されるロールレベルを設定する余地あり(関数)
         ]);
         
         session()->flash('message', '登録okです');
